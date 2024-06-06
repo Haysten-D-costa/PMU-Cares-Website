@@ -1,5 +1,6 @@
-(() => {
+/* RESPONSIVE NAV-BAR SCRIPTS */
 
+(() => {
   const openNavMenu = document.querySelector(".open-nav-menu"),
     closeNavMenu = document.querySelector(".close-nav-menu"),
     navMenu = document.querySelector(".nav-menu"),
@@ -64,3 +65,35 @@
 
 })();
 
+
+
+
+
+/* SCROLL ACTIVATED STICKY NAVIGATION SCRIPT */
+
+const body = document.body;
+const logoContainer = document.querySelector(".logo-container");
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll == 0) {
+    logoContainer.classList.remove("hide-element");
+  }
+  if (currentScroll <= 0) {
+    body.classList.remove("scroll-up");
+  }
+  if (currentScroll > lastScroll && !body.classList.contains('scroll-down')) {
+    body.classList.remove("scroll-up");
+    body.classList.add("scroll-down");
+
+  }
+  if (currentScroll < lastScroll && body.classList.contains('scroll-down')) {
+    body.classList.remove("scroll-down");
+    body.classList.add("scroll-up");
+  }
+  if (body.classList.contains('scroll-up')) {
+    logoContainer.classList.add("hide-element");
+  }
+  lastScroll = currentScroll;
+});
