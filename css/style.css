@@ -7,8 +7,11 @@
     color: #060026;
     background: url("/img/white-bg3.jpeg");
 }
+.section {
+    height: auto;
+}
 .main-header-section {
-    padding: 0 5rem;
+    padding: 0 5.9rem;
     width: 100%;
     height: auto;
     display: flex;
@@ -46,8 +49,8 @@
     right: 0;
 }
 #container1 .btn {
-    margin: 2rem auto 0 0;
-    padding: 1rem;
+    margin: 0.5rem auto 0 0;
+    padding: 0.9rem;
     border: none;
     color: whitesmoke;
     background: #17293F;
@@ -81,12 +84,19 @@
     }
     .main-header-section #container1 h1 {
         font-size: 40px;
-        line-height: 2.8rem;
+        line-height: 2.6rem;
     }
 }
 @media screen and (max-width: 600px) {
     .img2 { display: none; }
     
+}
+@media screen and (max-width: 420px) {
+    .main-header-section #container1 h1 {
+        font-size: 36px;
+        line-height: 2.2rem;
+    }
+    .img1 { width: 300px; }
 }
 
 
