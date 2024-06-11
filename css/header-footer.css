@@ -30,7 +30,9 @@ body {
 body.hidden-scrolling {
 	overflow-y: hidden;
 }
-/* .main-section {} */
+main {
+	padding: 126px 0 5vh; /* REQUIRED ! so that content doesnt hide under navigation bar */
+}
 .container {
 	max-width: 100%;
 	margin: auto;
