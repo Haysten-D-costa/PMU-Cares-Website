@@ -75,6 +75,7 @@
         align-items: self-start;
         justify-content: center;
     }
+    #container1 .btn { margin: 0 auto; }
     .img1 { width: 356px; }
     .img2 { width: 180px; }
 }
@@ -89,15 +90,20 @@
     }
 }
 @media screen and (max-width: 600px) {
+    .img1 {
+        width: 100%;
+    }
     .img2 { display: none; }
     
 }
 @media screen and (max-width: 420px) {
     .main-header-section #container1 h1 {
-        font-size: 36px;
+        font-size: 35px;
         line-height: 2.2rem;
     }
-    .img1 { width: 300px; }
+    .main-header-section #container1 .btn {
+        width: 90%;
+    }
 }
 
 
