@@ -21,7 +21,6 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
 body {
 	line-height: 1.5;
 	font-family: "Raleway", sans-serif;
@@ -30,6 +29,9 @@ body {
 }
 body.hidden-scrolling {
 	overflow-y: hidden;
+}
+.main-section {
+	padding: 20vh 0 5vh; /* REQUIRED ! so that content doesnt hide under navigation bar */
 }
 .container {
 	max-width: 100%;
@@ -52,6 +54,7 @@ a { text-decoration: none; }
 	top: 0;
 	z-index: 999;
 	transition: all 0.3s ease-in-out;
+	margin-bottom: 100rem;
 }
 .nav-container {
 	position: relative;
