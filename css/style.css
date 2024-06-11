@@ -3,7 +3,7 @@
 .main-section {
     font-family: "Raleway", sans-serif;
     line-height: 1.5;
-    /* padding: 20vh 0 5vh; REQUIRED ! so that content doesnt hide under navigation bar */
+    padding: 20vh 0 5vh;/* REQUIRED ! so that content doesnt hide under navigation bar */
     color: #060026;
     background: url("../img/white-bg3.jpeg");
 }
@@ -13,7 +13,7 @@
 }
 .main-header-section {
     padding: 0 5.9rem;
-    margin: 1rem 0 3rem;
+    margin: 3rem 0 3rem;
     width: 100%;
     height: auto;
     display: flex;
@@ -64,7 +64,14 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 15px;
+    border: 3px solid transparent;
     font-weight: 600;
+}
+#container1 .btn:hover {
+    border: 3px solid #17293F;
+    background: transparent;
+    color: #17293F;
+    transition: 0.3s ease-in;
 }
 @media screen and (max-width: 1040px) {
     .main-header-section {
