@@ -1,3 +1,5 @@
+<?php include 'php/connect.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +10,7 @@
     <title>PMU-Cares</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="css/header-footer.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -19,8 +21,8 @@
         <div class="container">
             <div class="header-main">
                 <div class="logo-container">
-                    <a href="/">
-                        <img width="auto" height="100" src="img/logo.png" alt="CARES LOGO"
+                    <a href="index.php">
+                        <img class="scale" width="auto" height="100" src="img/logo.png" alt="CARES LOGO"
                             sizes="(max-width: 375px) 100vw, 375px" />
                     </a>
                 </div>
@@ -34,14 +36,14 @@
                             <i class="fa-solid fa-xmark close-menu"></i>
                         </div>
                         <ul class="menu">
-                            <li class="menu-item"><a href="/">Home </a></li>
+                            <li class="menu-item"><a href="index.php">Home </a></li>
                             <li class="menu-item dropdown-menu-branch">
                                 <a href="#" data-toggle="sub-menu">About Us <i class="fa-solid fa-chevron-down"></i></a>
                                 <ul class="sub-menu">
+                                    <li class="menu-item"><a href="#">Know our Team</a></li>
                                     <li class="menu-item"><a href="#">About Scheme</a></li>
                                     <li class="menu-item"><a href="#">About Wired Internet Scheme</a></li>
                                     <!-- <li class="menu-item"><a href="#">About Mhaji Lab, Bari Lab</a></li> -->
-                                    <li class="menu-item"><a href="#">Know our Team</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item dropdown-menu-branch">
@@ -59,7 +61,7 @@
                                     <li class="menu-item"><a href="#">Student - Teacher Creativity</a></li> -->
                                 </ul>
                             </li>
-                            <li class="menu-item"><a href="#">Recruitment</a></li>
+                            <!-- <li class="menu-item"><a href="#">Recruitment</a></li> -->
                             <li class="menu-item"><a href="html/circulars-orders.html">Circulars & Orders</a></li>
                             <li class="menu-item dropdown-menu-branch">
                                 <a href="#" data-toggle="sub-menu">Help Desk <i
@@ -67,7 +69,7 @@
                                 <ul class="sub-menu">
                                     <li class="menu-item"><a href="#">Help Desk User Guide</a></li>
                                     <li class="menu-item"><a href="#">Help Desk User Video</a></li>
-                                    <li class="menu-item"><a href="#">ICT Equipment Maintenance</a></li>
+                                    <!-- <li class="menu-item"><a href="#">ICT Equipment Maintenance</a></li> -->
                                 </ul>
                             </li>
                             <li class="menu-item"><a href="html/contact-us.html">Contact Us</a></li>
@@ -81,17 +83,22 @@
 
     <!--! MAIN-START -->
     <main class="main-section">
+
         <!--Section1 start-->
         <section class="main-header-section">
             <div id="container1" class="header-container">
-                <h1 >Coding And Robotics Education in Schools Scheme</h1>
-                <p >Mission to develop Computational & Design Thinking skills along with programming integrated into the school level education for the State of Goa.</p>
-                <button class="btn" >Elective curriculum details 2024 - 2025</button>
+                <h1>Coding And Robotics Education in Schools Scheme</h1>
+                <p>
+                    Mission to develop Computational & Design Thinking skills along with programming integrated into the school level education for the State of Goa.
+                </p>
+                <button class="btn">Elective curriculum details 2024 - 2025</button>
             </div>
             <div id="container2" class="header-container">
-                <img src="img/BuddyTeachers_TFG1.jpg" class="img1" height="auto" width="365px" alt="Buddy teachers TFG1" >
-                <img src="img/Blender-Nation-Thon-TalukaLevel-13.jpg" class="img2" height="auto" width="180px" alt="Blender nation-thon taluka level" >
-                <p ><i>"Persistent questioning and healthy inquisitiveness are the first requisite for acquiring learning of any kind"</i> <b>- Mahatma Gandhi</b></p>
+                <img src="img/BuddyTeachers_TFG1.jpg" class="img1 scale" height="auto" width="405px" alt="Buddy teachers TFG1" >
+                <img src="img/Blender-Nation-Thon-TalukaLevel-13.jpg" class="img2 scale" height="auto" width="220px" alt="Blender nation-thon taluka level" >
+            </div>
+            <div class="quote-container scale">
+            <p data-aos="fade-left" data-aos-offset="290" data-aos-easing="ease-in-sine" data-aos-once="true" class="quote"><i>"Persistent questioning and healthy inquisitiveness are the first requisite for acquiring learning of any kind"</i> <b>- Mahatma Gandhi</b></p>
             </div>
         </section>
         <!--Section1 end-->
@@ -102,8 +109,11 @@
             <div class="about-container">
                 <div class="cares-mission">
                     <h2>PMU - CARES Mission Statement</h2>
-                    <p>Mission to develop computational and design thinking skills along with programming integrated into the school level education for the State of Goa to prepare students for the demands of the 21st-century digital world.</p>
-                    <a href="#" class="a-btn">KNOW MORE</a>
+                    <p class="reveal-text">
+                        Mission to develop computational and design thinking skills along with programming integrated into the school level education for the State of Goa to prepare students for the demands of the 21st-century digital world.
+                        To incorporate Computational and Design thinking abilities, as well as programming, into school-level teaching in the state of Goa, in order to prepare students for the needs of the digital world of the twenty-first century.
+                    </p>
+                    <a href="#" class="a-btn scale">Know More</a>
                 </div>
                 <div class="cares-video">
                     <iframe 
@@ -120,64 +130,67 @@
         <section class="blog-post-section section">
             <h1 class="section-header section-centered">LATEST NEWS & POSTS</h1>
             <div class="blog-container">
-                <div class="blog">
+                <?php 
+
+                $start = 0;
+                $posts_per_page = 3;
+
+                $records = mysqli_query($con, "SELECT * FROM blog_posts");
+                $no_rows = $records->num_rows;
+                $pages = ceil($no_rows / $posts_per_page); 
+
+                $result = mysqli_query($con, "SELECT count(*) AS total FROM blog_posts");
+
+                if($row = mysqli_fetch_assoc($result)) {
+                    $total_posts = $row['total'];
+                }
+                $result = mysqli_query($con, "SELECT * FROM blog_posts LIMIT $start, $posts_per_page");
+                while($row = mysqli_fetch_assoc($result)) {
+                    $truncated_title = substr($row["title"], 0, 50); // Get the truncated title....
+                    if(strlen($row["title"]) > 50) { // If the title is longer than 50 characters, add ellipsis....
+                        $truncated_title .= ' . . .';
+                    }
+                ?>
+                <div class="blog scale">
                     <div class="blog-image-container">
-                        <img src="img/post.png" width="300px" height="300px" alt=""> 
+                        <a href="<?php echo $row["link_to_image"] ?>">
+                            <img src="<?php echo $row["link_to_image"] ?>" width="300px" height="300px" alt="<?php echo $row["title"] ?>">
+                        </a>
                     </div>
                     <div class="blog-text-container">
                         <div class="blog-details">
-                            <span class="blog-class">Cares-Goa</span>
+                            <span class="blog-class"><?php echo $row["author"] ?></span>
                             <div class="blog-date">
                                 <i class="fa-solid fa-clock"></i>
-                                <p>24-01-03</p>
+                                <p><?php echo $row["date"] ?></p>
                             </div>
                         </div>
-                        <h3 class="blog-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, veritatis?</h3>
+                        <h3 class="blog-title"><?php echo $truncated_title ?></h3>
                     </div>
-                    <a href="#">Read More</a>
+                    <a href="<?php echo $row["link_to_post"] ?>">Read More</a>                
                 </div>
-                <div class="blog">
-                    <div class="blog-image-container">
-                        <img src="img/post.png" width="300px" height="300px" alt=""> 
-                    </div>
-                    <div class="blog-text-container">
-                        <div class="blog-details">
-                            <span class="blog-class">Cares-Goa</span>
-                            <div class="blog-date">
-                                <i class="fa-solid fa-clock"></i>
-                                <p>24-01-03</p>
-                            </div>
-                        </div>
-                        <h3 class="blog-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, veritatis?</h3>
-                    </div>
-                    <a href="#">Read More</a>
-                </div>
-                <div class="blog">
-                    <div class="blog-image-container">
-                        <img src="img/post.png" width="300px" height="300px" alt=""> 
-                    </div>
-                    <div class="blog-text-container">
-                        <div class="blog-details">
-                            <span class="blog-class">Cares-Goa</span>
-                            <div class="blog-date">
-                                <i class="fa-solid fa-clock"></i>
-                                <p>24-01-03</p>
-                            </div>
-                        </div>
-                        <h3 class="blog-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, veritatis?</h3>
-                    </div>
-                    <a href="#">Read More</a>
-                </div>
+
+                <?php
+                }
+                ?>
             </div>
-            <div class="a-btn-container">
-                <a href="#" class="km-btn a-btn">KNOW MORE</a>
+            <div class="a-btn-container scale">
+                <a href="php/blog-posts.php" class="scale km-btn a-btn">View More Posts</a>
             </div>
+
         </section>
         <!--Section3 end-->
 
         <!--Section4 start-->
         <section class="competitions-section section">
-
+            <h1>COMPETITIONS</h1>
+            <div class="competitions-container">
+                <a href="#" class="scale">'Junior Entrepreneurs: From Idea to Impact' Bootcamp</a>
+                <a href="#" class="scale">GOA CODES 2024</a>
+                <a href="#" class="scale">Critical Thinking Diwali - Boot Camp</a>
+                <a href="#" class="scale">Blender BootCamp 2023</a>
+                <a href="#" class="scale">Goa-Codes 2023</a>
+            </div>
         </section>
         <!--Section4 end-->
 
@@ -197,7 +210,7 @@
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li><a href="#" target="_blank">Gallery</a></li>
                         <li><a href="#" target="_blank">Directorate of Education</a></li>
                         <li><a href="#">Fee Online Payment</a></li>
@@ -266,9 +279,9 @@
     
     <script src="js/script.js"></script>
     <script src="js/header-footer.js"></script>
-    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // AOS.init(); // For activation of the AOS Script...
+        AOS.init(); // For activation of the AOS Script...
     </script>
 </body>
 

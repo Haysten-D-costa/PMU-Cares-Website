@@ -3,7 +3,7 @@
 .main-section {
     font-family: "Raleway", sans-serif;
     line-height: 1.5;
-    padding: 20vh 0 5vh; /* REQUIRED so that content doesnt hide under navigation bar */
+    padding: 20vh 0 0; /* REQUIRED so that content doesnt hide under navigation bar */
     color: #060026;
     background: url("../img/white-bg3.jpeg");
     /* width: 100%; */
@@ -21,7 +21,7 @@
     background: #17293F;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 600;
 }
 .main-header-section {
@@ -32,7 +32,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 5rem;
 }
 .section-header {
     font-size: 35px;
@@ -49,13 +49,15 @@
 }
 .main-header-section p {
     font-weight: 500;
+    font-size: 18px;
     text-align: justify;
 }
 #container1 {
-    width: 55%;
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 }
 #container2 {
     width: 40%;
@@ -64,23 +66,27 @@
 }
 .img2 {
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     left: 0;
+    border-radius: 4px;
 }
 .img1 {
     position: absolute;
     top: 0;
     right: 0;
+    border-radius: 4px;
 }
-#container2 p {
-    position: absolute;
-    bottom: -80px;
-    left: 0;
+.quote-container {
+    width: 75%;
+    margin: 0 auto;
+}
+.quote {
     background: white;
-    padding: 1rem;
-    filter: drop-shadow(0 -10px 20px rgb(170, 170, 170));
+    padding: 1.5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.5);
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 19px;
+    width: 100%;
 }
 #container1 .btn {
     margin: 0.5rem auto 0 0;
@@ -91,7 +97,7 @@
     background: #17293F;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
 }
 #container1 .btn:hover {
@@ -116,7 +122,7 @@
         justify-content: center;
         gap: 1rem;
     }
-    #container2 p { display: none; }
+    .quote-container { display: none; }
     #container1 .btn { margin: 0 auto; }
     .img1 { width: 356px; }
     .img2 { width: 180px; }
@@ -160,6 +166,7 @@
 .about-cares-section {
     background: #e1e1e1;
     text-align: justify;
+    padding: 4rem 0;
 }
 .about-container {
     margin: 1rem 5.9rem;
@@ -173,6 +180,12 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+.cares-mission p {
+    font-size: 18px;
+}
+.cares-mission h2 {
+    text-align: left;
 }
 .about-cares-section .section-header {
     display: inline-block;
@@ -224,7 +237,7 @@
     flex-direction: column;
     color: #060026;
     background: url("../img/white-bg3.jpeg");
-    padding: 2rem 0 2rem;
+    padding: 6rem 0 2rem;
 }
 .blog-post-section .blog-container {
     display: flex;
@@ -235,6 +248,17 @@
     gap: 1rem;
     row-gap: 1rem;
     margin: 20px 0;
+}
+.blog-post-section .blog-container .blog .blog-image-container {
+    position: relative;
+    overflow: hidden;
+}
+.blog-post-section .blog-container .blog .blog-image-container a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 .blog-post-section .blog-container .blog {
     display: inline-block;
@@ -253,10 +277,12 @@
 }
 .blog-image-container img {
     width: 100%;
-    height: 100%;
+    /* height: 50%; */
     object-fit: cover;
     object-position: center;
     border-radius: 4px;
+    display: block;
+    object-fit: cover;
 }
 .blog-text-container {
     display: flex;
@@ -282,8 +308,9 @@
     padding: 1rem;
 }
 .blog-post-section .a-btn-container {
-    margin: 0 auto;
+    margin: 2rem auto;
 }
+
 @media screen and (max-width: 460px) {
     .blog-post-section h1 {
         font-size: 25px;
@@ -291,9 +318,53 @@
 }
 @media screen and (max-width: 400px) {
     .blog-post-section .blog-container .blog {
-        width: 230px;
+        width: 260px;
     }
     .blog-post-section h1 {
         font-size: 20px;
     }
+}
+
+
+
+
+
+
+/* COMPETITIONS SECTION STYLIG */
+
+.competitions-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #e1e1e1;
+}
+.competitions-section h1 {
+    font-size: 35px;
+    font-weight: 700;
+    margin: 0 0 2rem;
+}
+.competitions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 40%;
+}
+.competitions-container a {
+    background: url("../img/white-bg3.jpeg");
+    padding: 2rem;
+    width: 100%;
+    text-align: left;
+    border-radius: 20px;
+    font-size: 20px;
+    color: #060026;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.5);
+
+}
+.competitions-container a:hover {
+    background: #17293F;
+    color: #dbdbdb;  
+    transition: 0.3s ease-in;
 }
