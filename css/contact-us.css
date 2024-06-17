@@ -2,7 +2,6 @@ main {
     background: url("../img/white-bg3.jpeg");
 }
 .contact-us {
-    background: url("../img/white-bg3.jpeg");
     position: relative;
     height: auto;
     padding: 0 100px;
@@ -10,7 +9,6 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* background: white; */
     background-size: cover;
 }
 .contact-us .content {
