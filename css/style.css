@@ -3,9 +3,10 @@
 .main-section {
     font-family: "Raleway", sans-serif;
     line-height: 1.5;
-    padding: 20vh 0 5vh;/* REQUIRED ! so that content doesnt hide under navigation bar */
+    padding: 20vh 0 5vh; /* REQUIRED so that content doesnt hide under navigation bar */
     color: #060026;
     background: url("../img/white-bg3.jpeg");
+    /* width: 100%; */
 }
 .section {
     height: auto;
