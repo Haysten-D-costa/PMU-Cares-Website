@@ -83,7 +83,7 @@
                 <p>
                     Mission to develop Computational & Design Thinking skills along with programming integrated into the school level education for the State of Goa.
                 </p>
-                <button class="btn">Elective curriculum details 2024 - 2025</button>
+                <a href="img/Elective-2024-25.jpg" class="btn">Elective curriculum details 2024 - 2025</a>
             </div>
             <div id="container2" class="header-container">
                 <img src="img/BuddyTeachers_TFG1.jpg" class="img1 scale" height="auto" width="405px" alt="Buddy teachers TFG1" >
@@ -182,25 +182,25 @@
                 </div> -->
                 <div class="competitions-content">
                     <a href="#" class="competition-cards scale">
-                        <i class="fa-solid fa-lightbulb scale"></i><!--!PUT SOME LOGO HERE-->
+                        <i class="fa-solid fa-lightbulb scale"></i>
                         'Junior Entrepreneurs: From Idea to Impact' Bootcamp
                     </a>
                     <a href="#" class="competition-cards scale">
-                        <i class="fa-solid fa-code scale"></i><!--!PUT SOME LOGO HERE-->
+                        <i class="fa-solid fa-code scale"></i>
                         Goa Codes 2024
                     </a>
                     <a href="#" class="competition-cards scale">
-                        <i class="fa-solid fa-brain scale"></i><!--!PUT SOME LOGO HERE-->
+                        <i class="fa-solid fa-brain scale"></i>
                         Critical Thinking Diwali - Boot Camp
                     </a>
-                    <a href="#" class="competition-cards scale">
-                        <i class="fa-solid fa-cubes scale"></i><!--!PUT SOME LOGO HERE-->
+                    <!-- <a href="#" class="competition-cards scale">
+                        <i class="fa-solid fa-cubes scale"></i>
                         Blender BootCamp 2023
-                    </a>
-                    <a href="#" class="competition-cards scale">
-                        <i class="fa-solid fa-laptop-code scale"></i><!--!PUT SOME LOGO HERE-->
+                    </a> -->
+                    <!-- <a href="#" class="competition-cards scale">
+                        <i class="fa-solid fa-laptop-code scale"></i>
                         Goa-Codes 2023
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </section>

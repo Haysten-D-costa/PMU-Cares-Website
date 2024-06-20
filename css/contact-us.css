@@ -4,7 +4,7 @@ main {
 .contact-us {
     position: relative;
     height: auto;
-    padding: 0 100px;
+    padding: 20px 100px;
     display: flex;
     justify-content: center;
     align-items: center;
