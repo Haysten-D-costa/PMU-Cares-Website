@@ -46,32 +46,24 @@
                                     <!-- <li class="menu-item"><a href="#">About Mhaji Lab, Bari Lab</a></li> -->
                                 </ul>
                             </li>
-                            <li class="menu-item dropdown-menu-branch">
+                            <!-- <li class="menu-item dropdown-menu-branch">
                                 <a href="#" data-toggle="sub-menu">Resources <i
                                         class="fa-solid fa-chevron-down"></i></a>
                                 <ul class="sub-menu">
                                     <li class="menu-item"><a href="#">Competition</a></li>
                                     <li class="menu-item"><a href="#">Gallery</a></li>
                                     <li class="menu-item"><a href="#">Join Us</a></li>
-                                    <!-- <li class="menu-item"><a href="#">Tenders</a></li> -->
-                                    <!-- <li class="menu-item"><a href="#">Revised ICT Curriculum</a></li>
+                                    <li class="menu-item"><a href="#">Tenders</a></li>
+                                    <li class="menu-item"><a href="#">Revised ICT Curriculum</a></li>
                                     <li class="menu-item"><a href="#">Class VI Regular</a></li>
                                     <li class="menu-item"><a href="#">Class VI - VII Elective</a></li>
                                     <li class="menu-item"><a href="#">Class VII Regular</a></li>
-                                    <li class="menu-item"><a href="#">Student - Teacher Creativity</a></li> -->
+                                    <li class="menu-item"><a href="#">Student - Teacher Creativity</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <!-- <li class="menu-item"><a href="#">Recruitment</a></li> -->
                             <li class="menu-item"><a href="html/circulars-orders.html">Circulars & Orders</a></li>
-                            <li class="menu-item dropdown-menu-branch">
-                                <a href="#" data-toggle="sub-menu">Help Desk <i
-                                        class="fa-solid fa-chevron-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="#">Help Desk User Guide</a></li>
-                                    <li class="menu-item"><a href="#">Help Desk User Video</a></li>
-                                    <!-- <li class="menu-item"><a href="#">ICT Equipment Maintenance</a></li> -->
-                                </ul>
-                            </li>
+                            <li class="menu-item"><a href="html/help-desk.html">Help Desk</li>
                             <li class="menu-item"><a href="html/contact-us.html">Contact Us</a></li>
                         </ul>
                     </nav>
@@ -185,11 +177,31 @@
         <section class="competitions-section section">
             <h1>COMPETITIONS</h1>
             <div class="competitions-container">
-                <a href="#" class="scale">'Junior Entrepreneurs: From Idea to Impact' Bootcamp</a>
-                <a href="#" class="scale">GOA CODES 2024</a>
-                <a href="#" class="scale">Critical Thinking Diwali - Boot Camp</a>
-                <a href="#" class="scale">Blender BootCamp 2023</a>
-                <a href="#" class="scale">Goa-Codes 2023</a>
+                <!-- <div class="competitions-image">
+                    <img src="img/post.png" width="300px" height="auto" alt="">
+                </div> -->
+                <div class="competitions-content">
+                    <a href="#" class="competition-cards scale">
+                        <i class="fa-solid fa-lightbulb scale"></i><!--!PUT SOME LOGO HERE-->
+                        'Junior Entrepreneurs: From Idea to Impact' Bootcamp
+                    </a>
+                    <a href="#" class="competition-cards scale">
+                        <i class="fa-solid fa-code scale"></i><!--!PUT SOME LOGO HERE-->
+                        Goa Codes 2024
+                    </a>
+                    <a href="#" class="competition-cards scale">
+                        <i class="fa-solid fa-brain scale"></i><!--!PUT SOME LOGO HERE-->
+                        Critical Thinking Diwali - Boot Camp
+                    </a>
+                    <a href="#" class="competition-cards scale">
+                        <i class="fa-solid fa-cubes scale"></i><!--!PUT SOME LOGO HERE-->
+                        Blender BootCamp 2023
+                    </a>
+                    <a href="#" class="competition-cards scale">
+                        <i class="fa-solid fa-laptop-code scale"></i><!--!PUT SOME LOGO HERE-->
+                        Goa-Codes 2023
+                    </a>
+                </div>
             </div>
         </section>
         <!--Section4 end-->
