@@ -52,13 +52,7 @@
                      </ul>
                   </li>
                   <li class="menu-item"><a href="circulars-orders.html">Circulars & Orders</a></li>
-                  <li class="menu-item dropdown-menu-branch">
-                     <a href="#" data-toggle="sub-menu">Help Desk <i class="fa-solid fa-chevron-down"></i></a>
-                     <ul class="sub-menu">
-                        <li class="menu-item"><a href="#">Help Desk User Guide</a></li>
-                        <li class="menu-item"><a href="#">Help Desk User Video</a></li>
-                     </ul>
-                  </li>
+                  <li class="menu-item"><a href="../html/help-desk.html">Help Desk</a></li>
                   <li class="menu-item"><a href="contact-us.html">Contact Us</a></li>
                </ul>
             </nav>

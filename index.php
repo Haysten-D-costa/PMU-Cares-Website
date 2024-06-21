@@ -26,39 +26,37 @@
                             sizes="(max-width: 375px) 100vw, 375px" />
                     </a>
                 </div>
-                <div class="nav-container">
-                    <div class="open-nav-menu">
-                        <span></span>
-                    </div>
-                    <div class="menu-overlay"></div>
-                    <nav class="nav-menu">
-                        <div class="close-nav-menu">
-                            <i class="fa-solid fa-xmark close-menu"></i>
-                        </div>
-                        <ul class="menu">
-                            <li class="menu-item"><a href="index.php">Home </a></li>
-                            <li class="menu-item dropdown-menu-branch">
-                                <a href="#" data-toggle="sub-menu">About Us <i class="fa-solid fa-chevron-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="#">Know our Team</a></li>
-                                    <li class="menu-item"><a href="#">About Scheme</a></li>
-                                    <li class="menu-item"><a href="#">About Wired Internet Scheme</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item dropdown-menu-branch">
-                                <a href="#" data-toggle="sub-menu">Resources <i class="fa-solid fa-chevron-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="php/gallery-album.php">Gallery</a></li>
-                                    <li class="menu-item"><a href="html/competitions.html">Competition</a></li>
-                                    <li class="menu-item"><a href="#">Join Us</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item"><a href="html/circulars-orders.html">Circulars & Orders</a></li>
-                            <li class="menu-item"><a href="html/help-desk.html">Help Desk</li>
-                            <li class="menu-item"><a href="html/contact-us.html">Contact Us</a></li>
-                        </ul>
-                    </nav>
+                <div class="open-nav-menu">
+                    <span></span>
                 </div>
+                <div class="menu-overlay"></div>
+                <nav class="nav-menu">
+                    <div class="close-nav-menu">
+                        <i class="fa-solid fa-xmark close-menu"></i>
+                    </div>
+                    <ul class="menu">
+                        <li class="menu-item"><a href="index.php">Home </a></li>
+                        <li class="menu-item dropdown-menu-branch">
+                            <a href="#" data-toggle="sub-menu">About Us <i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="sub-menu">
+                                <li class="menu-item"><a href="#">About Scheme</a></li>
+                                <li class="menu-item"><a href="#">About Wired Internet Scheme</a></li>
+                                <li class="menu-item"><a href="#">Know our Team</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item dropdown-menu-branch">
+                            <a href="#" data-toggle="sub-menu">Resources <i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="sub-menu">
+                                <li class="menu-item"><a href="php/gallery-album.php">Gallery</a></li>
+                                <li class="menu-item"><a href="html/competitions.html">Competition</a></li>
+                                <li class="menu-item"><a href="#">Join Us</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="html/circulars-orders.html">Circulars & Orders</a></li>
+                        <li class="menu-item"><a href="html/help-desk.html">Help Desk</a></li>
+                        <li class="menu-item"><a href="html/contact-us.html">Contact Us</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
@@ -168,9 +166,6 @@
         <section class="competitions-section section">
             <h1>COMPETITIONS</h1>
             <div class="competitions-container">
-                <!-- <div class="competitions-image">
-                    <img src="img/post.png" width="300px" height="auto" alt="">
-                </div> -->
                 <div class="competitions-content">
                     <a href="#" class="competition-cards scale">
                         <i class="fa-solid fa-lightbulb scale"></i>
@@ -184,16 +179,9 @@
                         <i class="fa-solid fa-brain scale"></i>
                         Critical Thinking Diwali - Boot Camp
                     </a>
-                    <!-- <a href="#" class="competition-cards scale">
-                        <i class="fa-solid fa-cubes scale"></i>
-                        Blender BootCamp 2023
-                    </a> -->
-                    <!-- <a href="#" class="competition-cards scale">
-                        <i class="fa-solid fa-laptop-code scale"></i>
-                        Goa-Codes 2023
-                    </a> -->
                 </div>
             </div>
+            <a href="html/competitions.html" class="a-btn">See More</a>
         </section>
         <!--Section4 end-->
 
