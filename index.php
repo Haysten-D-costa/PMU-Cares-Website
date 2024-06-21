@@ -43,25 +43,16 @@
                                     <li class="menu-item"><a href="#">Know our Team</a></li>
                                     <li class="menu-item"><a href="#">About Scheme</a></li>
                                     <li class="menu-item"><a href="#">About Wired Internet Scheme</a></li>
-                                    <!-- <li class="menu-item"><a href="#">About Mhaji Lab, Bari Lab</a></li> -->
                                 </ul>
                             </li>
-                            <!-- <li class="menu-item dropdown-menu-branch">
-                                <a href="#" data-toggle="sub-menu">Resources <i
-                                        class="fa-solid fa-chevron-down"></i></a>
+                            <li class="menu-item dropdown-menu-branch">
+                                <a href="#" data-toggle="sub-menu">Resources <i class="fa-solid fa-chevron-down"></i></a>
                                 <ul class="sub-menu">
-                                    <li class="menu-item"><a href="#">Competition</a></li>
-                                    <li class="menu-item"><a href="#">Gallery</a></li>
+                                    <li class="menu-item"><a href="php/gallery-album.php">Gallery</a></li>
+                                    <li class="menu-item"><a href="html/competitions.html">Competition</a></li>
                                     <li class="menu-item"><a href="#">Join Us</a></li>
-                                    <li class="menu-item"><a href="#">Tenders</a></li>
-                                    <li class="menu-item"><a href="#">Revised ICT Curriculum</a></li>
-                                    <li class="menu-item"><a href="#">Class VI Regular</a></li>
-                                    <li class="menu-item"><a href="#">Class VI - VII Elective</a></li>
-                                    <li class="menu-item"><a href="#">Class VII Regular</a></li>
-                                    <li class="menu-item"><a href="#">Student - Teacher Creativity</a></li>
                                 </ul>
-                            </li> -->
-                            <!-- <li class="menu-item"><a href="#">Recruitment</a></li> -->
+                            </li>
                             <li class="menu-item"><a href="html/circulars-orders.html">Circulars & Orders</a></li>
                             <li class="menu-item"><a href="html/help-desk.html">Help Desk</li>
                             <li class="menu-item"><a href="html/contact-us.html">Contact Us</a></li>
@@ -223,7 +214,7 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="#" target="_blank">Gallery</a></li>
+                        <li><a href="php/gallery-album.php">Gallery</a></li>
                         <li><a href="#" target="_blank">Directorate of Education</a></li>
                         <li><a href="#">Fee Online Payment</a></li>
                     </ul>

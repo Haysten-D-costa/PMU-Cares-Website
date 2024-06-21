@@ -64,7 +64,7 @@ a { text-decoration: none; }
 	display: flex;
 	justify-content: space-between;
 	align-items: start;
-	padding: 10px 1rem;
+	padding: 0 1rem;
 	box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
 }
 .header .logo-container {
@@ -163,7 +163,7 @@ a { text-decoration: none; }
 }
 .header .menu>.menu-item>.sub-menu>.menu-item>a {
 	display: block;
-	padding: 10px 20px;
+	padding: 0 20px;
 	font-size: 19px;
 	font-weight: 600;
 	color: var(--dark-blue-primary);

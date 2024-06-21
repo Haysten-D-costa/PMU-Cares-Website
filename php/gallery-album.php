@@ -1,5 +1,3 @@
-<?php include 'connect.php'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,11 +5,12 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="icon" href="https://cares.goa.gov.in/wp-content/uploads/2022/12/favicon.ico" sizes="32x32">
-   <title>PMU-Cares | News & Posts</title>
+   <title>PMU-Cares</title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
    <link rel="stylesheet" href="../css/header-footer.css">
-   <link rel="stylesheet" href="../css/blog-posts.css">
+   <link rel="stylesheet" href="../css/gallery.css">
 </head>
 
 <body>
@@ -21,7 +20,7 @@
          <div class="header-main">
             <div class="logo-container">
                <a href="../index.php">
-                  <img class="scale" width="auto" height="100" src="../img/logo.png" alt="CARES LOGO"
+                  <img width="auto" height="100" src="../img/logo.png" alt="CARES LOGO"
                      sizes="(max-width: 375px) 100vw, 375px" />
                </a>
             </div>
@@ -38,9 +37,9 @@
                   <li class="menu-item dropdown-menu-branch">
                      <a href="#" data-toggle="sub-menu">About Us <i class="fa-solid fa-chevron-down"></i></a>
                      <ul class="sub-menu">
-                        <li class="menu-item"><a href="#">Know our Team</a></li>
                         <li class="menu-item"><a href="#">About Scheme</a></li>
                         <li class="menu-item"><a href="#">About Wired Internet Scheme</a></li>
+                        <li class="menu-item"><a href="#">Know our Team</a></li>
                      </ul>
                   </li>
                   <li class="menu-item dropdown-menu-branch">
@@ -69,39 +68,86 @@
 
    <!--! MAIN Start -->
    <main class="main-section">
-        <h1 class="section-header section-centered">LATEST NEWS & POSTS</h1>
-        <div class="blog-container">
-            <?php 
-            $result = mysqli_query($con, "SELECT * FROM blog_posts");
-            while($row = mysqli_fetch_assoc($result)) {
-                $truncated_title = substr($row["title"], 0, 50); // Get the truncated title....
-                if(strlen($row["title"]) > 50) { // If the title is longer than 50 characters, add ellipsis....
-                    $truncated_title .= ' . . .';
-                }
-            ?>
-            <div class="blog scale">
-                <div class="blog-image-container">
-                    <a href="../<?php echo $row["link_to_image"] ?>">
-                        <img src="../<?php echo $row["link_to_image"] ?>" width="300px" height="300px" alt="<?php echo $row["title"] ?>">
-                    </a>
-                </div>
-                <div class="blog-text-container">
-                    <div class="blog-details">
-                        <span class="blog-class"><?php echo $row["author"] ?></span>
-                        <div class="blog-date">
-                            <i class="fa-solid fa-clock"></i>
-                            <p><?php echo $row["date"] ?></p>
+   <section class="gallery-section">
+            <div class="gallery-section-container">
+                <h2>PMU-CARES ALBUMS GALLERY</h2>
+                <article class="article"> <!--! FIRST ALBUM - CELEBRATIONS Album-->
+                    <div class="gallery-title">
+                        <h3 class="title">CELEBRATION ALBUM'S</h3>
+                        <h3 class="date">2023 - 2024</h3>
+                    </div>
+                    <hr>
+                    <div class="event-gallery">
+                        <div class='column'>
+                        <?php
+                            include 'connect.php';
+                            if(isset($_GET["page"])) { $page = $_GET["page"]; } else { $page=1; };
+                            $start_from = ($page-1) * 12;
+                            $sql = "SELECT * FROM pmucares_album WHERE status='process' AND category='competition' OR category='conference' AND col_id='1' OR col_id='2' ORDER BY albumid DESC LIMIT $start_from, 12";
+                            $rs_result = mysqli_query($con, $sql);
+                        ?>
+                        <?php
+                            while ($row = mysqli_fetch_assoc($rs_result)) {
+                                $aimage=$row['image'];
+                                $aid=$row['albumid'];
+                                $aname=$row['name'];
+                                $astatus=$row['status'];
+                                $category=$row['category'];
+                        ?> 
+                            <div class='image-container'>
+                                <?php echo" <a href='gallery.php?id=$aid'>"; ?>
+                                <?php echo" <img src='../img/gallery/$aimage' width='100%' height='100%' alt='Album cover' alt='$aname' data-aos='zoom-in-up' data-aos-once='true'>
+                                    <div class='overlay'>
+                                        <div class='overlay-text'><h3>$aname</h3></div>
+                                    </div>
+                                </a>";?>
+                            </div>
+                        <?php } ?>
+                        </div>
+                        <div class='column'>
+                        <?php
+                            include 'connect.php';
+                            if(isset($_GET["page"])) { $page = $_GET["page"]; } else { $page=1; };
+                            $start_from = ($page-1) * 12;
+                            $sql = "SELECT * FROM pmucares_album WHERE status='process' AND category='session' OR category='ceremony' AND col_id='3' OR col_id='4' ORDER BY albumid DESC LIMIT $start_from, 12";
+                            $rs_result = mysqli_query($con, $sql);
+                            while ($row = mysqli_fetch_assoc($rs_result)) {
+                                $aimage=$row['image'];
+                                $aid=$row['albumid'];
+                                $aname=$row['name'];
+                                $astatus=$row['status'];
+                                $category=$row['category'];
+                        ?> 
+                            <div class='image-container'>
+                                <?php echo" <a href='gallery.php?id=$aid'>"; ?>
+                                <?php echo" <img src='../img/gallery/$aimage' width='100%' height='100%' alt='Album cover' alt='$aname' data-aos='zoom-in-up' data-aos-once='true'>
+                                    <div class='overlay'>
+                                        <div class='overlay-text'><h3>$aname</h3></div>
+                                    </div>
+                                </a>";?>
+                            </div>
+                        <?php } ?>
                         </div>
                     </div>
-                    <h3 class="blog-title"><?php echo $truncated_title ?></h3>
-                </div>
-                <a href="<?php echo $row["link_to_post"] ?>">Read More</a>                
+                </article>
+                <br>
+                <br>
+                <div align="center" class="pagenation-container">
+                <?php
+                    $sql = "SELECT COUNT(name) FROM pmucares_album";
+                    $rs_result = mysqli_query($con, $sql);
+                    $row = mysqli_fetch_row($rs_result);
+                    $total_records = $row[0];
+                    $total_pages = ceil($total_records / 12);
+                    for ($i=1; $i<=$total_pages; $i++) {
+                        echo "<span class='navigations_items_span'>";
+                        echo "<b>PAGE </b>";
+                        echo "<a href='celebrations-album-gallery.php?page=".$i."' class='navigation_item selected_navigation_item'>".$i."</a>";
+                        echo "</span>";
+                    };
+                ?>
             </div>
-
-            <?php
-            }
-            ?>
-        </div>
+        </section>
    </main>
    <!--! MAIN End -->
 
@@ -185,7 +231,11 @@
    <!--! FOOTER End -->
 
    <!--! SCRIPT Section-->
-   <script src="../js/header-footer.js"></script>
+   <script src="js/header-footer.js"></script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script>
+      AOS.init(); // For activation of the AOS Script...
+   </script>
 </body>
 
 </html>

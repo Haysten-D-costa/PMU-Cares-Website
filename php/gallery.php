@@ -1,3 +1,4 @@
+<?php $aid=$_REQUEST['id']; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,20 +6,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cares.goa.gov.in/wp-content/uploads/2022/12/favicon.ico" sizes="32x32">
-    <title>PMU-Cares | Contact us</title>
+    <title>PMU-Cares</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="../css/header-footer.css">
-    <link rel="stylesheet" href="../css/contact-us.css">
+    <link rel="stylesheet" href="../css/gallery.css">
 </head>
 
 <body>
+    <!--! HEADER Start -->
     <header class="header">
         <div class="container">
             <div class="header-main">
                 <div class="logo-container">
                     <a href="../index.php">
-                        <img class="scale" width="auto" height="100" src="../img/logo.png" alt="CARES LOGO"
+                        <img width="auto" height="100" src="../img/logo.png" alt="CARES LOGO"
                             sizes="(max-width: 375px) 100vw, 375px" />
                     </a>
                 </div>
@@ -43,8 +47,8 @@
                         <li class="menu-item dropdown-menu-branch">
                             <a href="#" data-toggle="sub-menu">Resources <i class="fa-solid fa-chevron-down"></i></a>
                             <ul class="sub-menu">
-                                <li class="menu-item"><a href="../php/gallery-album.php">Gallery</a></li>
-                                <li class="menu-item"><a href="competitions.html">Competition</a></li>
+                                <li class="menu-item"><a href="gallery-album.php">Gallery</a></li>
+                                <li class="menu-item"><a href="../html/competitions.html">Competition</a></li>
                                 <li class="menu-item"><a href="#">Join Us</a></li>
                             </ul>
                         </li>
@@ -62,88 +66,91 @@
             </div>
         </div>
     </header>
+    <!--! HEADER End -->
 
+    <!--! MAIN Start -->
     <main class="main-section">
-        <section class="contact-us">
-            <div class="content">
-                <h2>Contact Us</h2>
-                <p>Questions? Feedback? Reach out! Our team is ready to assist you. Contact us via email or phone for
-                    prompt assistance, at <b>Project Management Unit - Coding And Robotics Education in Schools Scheme, Goa</b></p>
-            </div>
-            <div class="contact-us-container">
-                <div class="contact-us-info">
-                    <div class="box">
-                        <div class="contact-us-icon"><i class="fas fa-map-marker-alt fa-2x scale"></i></div>
-                        <div class="contact-us-text">
-                            <h3>Address : </h3>
-                            <p>
-                            <address>Directorate Of Technical Education, Goa State DTE Building, Alto-Porvorim, Bardez-Goa, 403-521.</address>
-                            </p>
-                        </div>
+    <section class="gallery-section">
+            <div class="gallery-section-container">
+                <?php
+                    include 'connect.php';
+                    $sql = "SELECT * FROM pmucares_album WHERE albumid='$aid'";
+                    $rs_result = mysqli_query($con, $sql);
+                    while ($row = mysqli_fetch_assoc($rs_result)) 
+                    {
+                        $aimage=$row['image'];
+                        $aname=$row['name'];
+                        $adesc=$row['adesc'];
+                        $astatus=$row['status'];
+                        $category=$row['category'];
+                        $category=strtoupper($category);
+                ?>
+                <?php echo" <h2>$aname</h2>" ?>
+                <hr>
+                <br><br>
+                <?php echo" <div class='album-description'><p>$adesc</p></div>" ?>
+                <?php
+                    }
+                ?>
+                    <div class="gallery">
+                    <?php
+                        include 'connect.php';
+
+                        $limit = 18;
+                        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                        $offset = ($page - 1) * $limit;
+            
+                        $sql = "SELECT * FROM pmucares_gallery WHERE aid=$aid AND status='process' ORDER BY gimages ASC LIMIT $offset, $limit";
+                        $num_rows = mysqli_num_rows(mysqli_query($con, $sql));
+                        $result = mysqli_query($con, $sql);
+                        
+                        while ($row = mysqli_fetch_array($result)) {
+                            $gimage = $row['gimages'];
+                    ?> 
+                        <?php echo "<a href='../img/gallery/$gimage'><img src='../img/gallery/$gimage' alt='' data-aos='zoom-in-up' data-aos-once='true'></a>";?>
+                        <?php } ?>
                     </div>
-                    <div class="box">
-                        <div class="contact-us-icon"><i class="fas fa-envelope fa-2x scale"></i></div>
-                        <div class="contact-us-text">
-                            <h3>Email : </h3>
-                            <p>
-                                <b>Administration Queries : </b><a href="mailto:pmu.admin@goa.gov.in">pmu.admin@goa.gov.in</a><br> 
-                                <b>Technical Queries : </b><a href="mailto:cares-admin@goa.gov.in">cares-admin@goa.gov.in</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="contact-us-icon"><i class="fas fa-phone-alt fa-2x scale"></i></div>
-                        <div class="contact-us-text">
-                            <h3>Phone : </h3>
-                            <p class="number-style"> Ph &nbsp; : &nbsp; +91-832-2413571<br>Fax : &nbsp; +91-832-2413572</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form onsubmit="">
-                        <h2>Send us a message : </h2>
-                        <div class="input-box">
-                            <input type="text" name="name" id="name" required>
-                            <span>Full Name</span>
-                        </div>
-                        <div class="input-box">
-                            <input type="email" name="email" id="email" required>
-                            <span>Email</span>
-                        </div>
-                        <div class="input-box">
-                            <textarea name="message" id="message" required></textarea>
-                            <span>Type Your Messafe</span>
-                        </div>
-                        <div class="input-box">
-                            <input type="submit" name="" id="" class="btn scale" value="SUBMIT" onclick="openPopUp()">
-                        </div>
-                    </form>
-                </div>
             </div>
-            <div class="contact-map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d123015.12027955487!2d73.82887900000001!3d15.526198000000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfc11ddea9d07f%3A0xcbff8e3d74de6ca0!2sDirectorate%20of%20Technical%20Education!5e0!3m2!1sen!2sus!4v1718464269326!5m2!1sen!2sus"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
+            <div class="pagenation">
+                <?php
+                $sql = "SELECT COUNT(*) FROM pmucares_gallery where aid=$aid and status='process'";
+                $result = mysqli_query($con, $sql);
+                $total_rows = mysqli_fetch_array($result)[0];		
+                $total_pages = ceil($total_rows / $limit);
+
+                $prev_page = max(1, $page - 1);
+                echo "<a href='?id=$aid&page=1' class='special-btn" . ($page == 1 ? " active-page" : "") . "'><i class='fas fa-step-backward scale'></i></a>";
+                echo "<a href='?id=$aid&page=$prev_page' class='special-btn'><i class='fas fa-chevron-left scale'></i></a>";
+                
+                echo "<div>";
+                for($i = 1; $i <= $total_pages; $i++) {
+                    echo "<a href='?id=$aid&page=$i' class='every-page".($page == $i ? " active-page" : "")."'>$i</a>";
+                }
+                echo "</div>";
+                $next_page = min($total_pages, $page + 1);
+                echo "<a href='?id=$aid&page=$next_page' class='special-btn'><i class='fas fa-chevron-right scale'></i></a>";
+                echo "<a href='?id=$aid&page=$total_pages' class='special-btn" . ($page == 1 ? " active-page" : "") . "'><i class='fas fa-step-forward scale'></i></a>";
+                ?>
+            </div>     
         </section>
     </main>
+    <!--! MAIN End -->
 
+    <!--! FOOTER Start -->
     <footer class="footer">
         <div class="footer-container">
             <div class="row">
                 <div class="footer-col">
                     <h2>PMU - Coding And Robotics Education in Schools</h2>
                     <figure>
-                        <img src="../img/logo1.png" class="scale" alt="" width=100px height=100px>
+                        <img src="../img/logo1.png" class="scale" alt="CARES Logo" width=100px height=100px>
                     </figure>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="../index.php">Home</a></li>
-                        <li><a href="../php/gallery-album.php">Gallery</a></li>
+                        <li><a href="gallery-album.php">Gallery</a></li>
                         <li><a href="#" target="_blank">Directorate of Education</a></li>
                         <li><a href="#">Fee Online Payment</a></li>
                     </ul>
@@ -170,11 +177,16 @@
                 <div class="footer-col">
                     <h4>Follow us at</h4>
                     <div class="social-links scale">
-                        <a href="https://www.youtube.com/channel/UCxFgQGAMuymIvUYTJA8-SGw" target="_blank"><i class="fab fa-youtube scal"></i></a>
-                        <a href="https://www.facebook.com/caresgoa" target="_blank"><i class="fab fa-facebook-f scal"></i></a>
-                        <a href="https://www.instagram.com/cares_goa" target="_blank"><i class="fab fa-instagram scal"></i></a>
-                        <a href="https://www.linkedin.com/company/cares-goa" target="_blank"><i class="fab fa-linkedin scal"></i></a>
-                        <a href="https://www.twitter.com/cares_goa" target="_blank"><i class="fab fa-twitter scal"></i></a>
+                        <a href="https://www.youtube.com/channel/UCxFgQGAMuymIvUYTJA8-SGw" target="_blank"><i
+                                class="fab fa-youtube scal"></i></a>
+                        <a href="https://www.facebook.com/caresgoa" target="_blank"><i
+                                class="fab fa-facebook-f scal"></i></a>
+                        <a href="https://www.instagram.com/cares_goa" target="_blank"><i
+                                class="fab fa-instagram scal"></i></a>
+                        <a href="https://www.linkedin.com/company/cares-goa" target="_blank"><i
+                                class="fab fa-linkedin scal"></i></a>
+                        <a href="https://www.twitter.com/cares_goa" target="_blank"><i
+                                class="fab fa-twitter scal"></i></a>
                     </div>
                 </div>
                 <div class="footer-col"></div> <!--EMPTY for space! -->
@@ -208,8 +220,16 @@
     <section class="copyright-section">
         <h4>COPYRIGHT &copy; &nbsp; Coding And Robotics Education in Schools | <i>Haysten D'costa<i></h4>
     </section>
+    <!--! FOOTER End -->
 
+    <!--! SCRIPT Section-->
     <script src="../js/header-footer.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+    <script>
+        AOS.init(); // For activation of the AOS Script...
+        lightGallery(document.querySelector('.gallery'));
+    </script>
 </body>
 
 </html>
