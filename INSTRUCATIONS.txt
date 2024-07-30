@@ -1,0 +1,104 @@
+# DOCUMENTATION : Running the "PMU Cares" Website Using XAMPP
+
+## This Is the main "PMU Cares.zip" folder, that contains files and folders as follows :
+
+```
+PMU Cares/
+│
+├── html/ (contains HTML files)
+├── php / (contains PHP files)
+├── css / (contains CSS files)
+├── img / (contains images)
+├── docs/ (contains documentation/pdf files)
+├── index.php (main entry point for the website)
+└── sql/pmucares.sql  (database export file)
+```
+
+
+## PREREQUISITES :
+    -   XAMPP installed on your system....
+    -   VSCode or any IDE on your system....
+
+
+
+## Steps to Run the "PMU Cares" Website :
+
+    1. Start Apache and MySQL
+        - Open the XAMPP Control Panel.
+        - Start the Apache and MySQL services by clicking the "Start" button next to each service.
+
+    2. Place the extracted `"PMU Cares" Folder` in the htdocs Directory.
+        - Navigate to the XAMPP installation directory (commonly C:\xampp on Windows).
+        - Open the htdocs folder.
+        - Copy your project folder named "PMU Cares" into the htdocs directory. The full path should be something like C:\xampp\htdocs\PMU Cares.
+
+    3. Import the Database (*** VERY IMPORTANT STEP ***) - as it contains images and posts data....
+        - Open a web browser and go to http://localhost/phpmyadmin.
+        - Click on the "Import" tab.
+        - Click the "Choose File" button and select the pmucares.sql file from your "PMU Cares"/sql/pmucares.sql
+        - Click "Go" / "Import" to import the database schema and data.
+
+    4. Access Your Website
+        - Open a web browser.
+        - Navigate to `http://localhost/PMU Cares`
+        - PMU Cares website should now be up and running.
+
+
+
+
+### NOTE :
+    1. This website developed is 100% responsive,
+    2. There are a total of 5-6 developed web pages,
+    3. Video Previews / website demos are added in .zip file as well, along with responsiveness demo video....
+
+
+### DEVELOPED PAGES : 
+
+#### Under HTML Pages : 
+    1. circulars-orders.html
+    2. competitions.html
+    3. contact-us.html
+    4. help-desk.html
+
+#### Under PHP Pages : 
+    1. blog-posts.php
+    2. connect.php (for establishing connection to the database....)
+    3. gallery-album.php (will store the cover images to all the events and then take us to the respective event, on click....)
+    4. gallery.php (on selection of any event, this page will load all the images of that particular event....)
+
+
+
+
+## WEBSITE USE / VIEW DESCRIPTION : 
+
+-   On entering `localhost/PMU Cares` on any browser, you will be taken to the index.php page, this is the main entry point to the website.
+-   The nav bar contains set of developed pages, some of the pages are not developed, due to time constraints and other exams preparations and schedules....
+-   List of developed web-pages are as follows : 
+    ```
+    # DEVELOPED PAGES :    
+        1. Home (index.php)
+        2. Resources-> Competitions & Gallery (competitions.html & gallery-album.php)
+        3. Circulars & Orders (circulars-orders.html)
+        4. Help Desk (help-desk.html)
+        5. Contact us (contact-us.html)
+
+    # NOT DEVELOPED PAGES (But are added to demonstrate the page navigation-bar, menu-bar and other functionalities....)
+        1. About Us Section (NOT DONE)
+        2. Join Us - Under Resources (NOT DONE; other pages in RESOURCES DONE 👍)
+
+    ```
+-   Once you scroll down, various buttons and links can be explored....
+-   The post / latest news section has a "SEE MORE POSTS" button on click of which, u will be directed to the blog-posts.php
+-   Other pages and functionalities can he similarly explored !
+
+
+# THE WEBSITE IS DEVELOPED USING FOLLOWING : 
+    1.  HTML (For Static pages),
+    2.  CSS  (For Styling),
+    3.  PHP  (For Dynamic pages and communicating with MySQL DB.)
+    4.  JS   (For Other important functionalities).
+
+    (*) GIT / GITHUB : 
+        -   The entire project is available on Github, for version control...
+        -   The entire project is backed up on Github....and includes every change and updates done.
+	-   Can be cloned / forked using the link https://github.com/Haysten-D-costa/PMU-Cares-Website
